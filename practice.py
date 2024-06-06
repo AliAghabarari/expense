@@ -29,12 +29,12 @@ while 1:
         app = input('what do you want to change?: ')
         if app == 'spent':
             new_spent_for = input('enter new : ')
-            cur.execute('UPDATE control SET spent_for = ? WHERE id = ?', (identify, new_spent_for) )
+            cur.execute('UPDATE control SET spent_for = ? WHERE id = ?', (new_spent_for, identify) )
         
         elif app == 'amount':
             
             new_amount = int(input('enter new amount: '))
-            cur.execute('UPDATE control SET amount_money = ? WHERE id = ?', (identify, new_amount))
+            cur.execute('UPDATE control SET amount_money = ? WHERE id = ?', (new_amount , identify))
         con.commit()
 
     elif application == 4:
